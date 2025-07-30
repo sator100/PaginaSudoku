@@ -45,7 +45,8 @@ body{
     font-style: normal;
     height: 100vh;
     background-color: var(--bg-body);
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     user-select: none;
 }
 
@@ -409,6 +410,39 @@ nav{
     }
 }
 
+@media only screen and (max-width: 600px) {
+    .main-sudoku-grid {
+        gap: 1px;
+    }
+
+    .main-game-info-box {
+        font-size: 0.9rem;
+        padding: 0 10px;
+    }
+
+    .number,
+    .delete {
+        font-size: 1rem;
+    }
+
+    .main-game-info {
+        grid-template-columns: 1fr;
+    }
+
+    .numbers {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .btn, .input-name {
+        width: 90%;
+    }
+
+    .main-grid-cell {
+        font-size: 1rem;
+    }
+}
+
+
 @media only screen and (max-width: 800px) {
     :root {
         --nav-size: 50px;
@@ -441,5 +475,75 @@ nav{
 
     .main {
         height: 100vh;
+    }
+}
+
+@media only screen and (min-width: 801px) and (max-width: 1300px) {
+    :root {
+        --nav-size: 60px;
+
+        --sudoku-cell-size: 35px;
+
+        --border-radius: 8px;
+
+        --space-y: 15px;
+
+        --gap: 4px;
+
+        --font-size: 1.2rem;
+        --font-size-lg: 1.7rem;
+        --font-size-xl: 2.5rem;
+    }
+
+    .screen {
+        width: 95%;
+        max-width: 900px;
+        min-width: unset;
+    }
+
+    .main-grid-cell {
+        font-size: 1.2rem;
+        width: var(--sudoku-cell-size);
+        height: var(--sudoku-cell-size);
+    }
+
+    .btn, .input-name {
+        height: 55px;
+        width: 90%;
+        font-size: 1.2rem;
+    }
+
+    .main-game-info {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .main-game-info-box {
+        font-size: 1.1rem;
+        padding: 0 15px;
+    }
+
+    .numbers {
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    .number, .delete {
+        font-size: 1.2rem;
+        height: var(--sudoku-cell-size);
+    }
+
+    .pause-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 1.1rem;
+    }
+
+    .main {
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .main-sudoku-grid {
+        justify-content: center;
     }
 }
